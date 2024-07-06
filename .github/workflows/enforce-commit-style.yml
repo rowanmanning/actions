@@ -4,8 +4,8 @@ on:
   workflow_call:
 
 jobs:
-  verify:
-    name: Verify all commits
+  commitlint:
+    name: Run commitlint
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login != 'dependabot[bot]'
     steps:
