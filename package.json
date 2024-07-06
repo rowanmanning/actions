@@ -1,0 +1,30 @@
+{
+  "name": "@rowanmanning/actions",
+  "version": "3.2.0",
+  "private": true,
+  "description": "Reusable workflows and GitHub actions",
+  "keywords": [
+    "actions",
+    "github",
+    "workflows"
+  ],
+  "author": "Rowan Manning (https://rowanmanning.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowanmanning/actions.git"
+  },
+  "homepage": "https://github.com/rowanmanning/actions",
+  "bugs": "https://github.com/rowanmanning/actions/issues",
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.0.11"
+  }
+}
