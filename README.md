@@ -4,6 +4,7 @@
 Reusable workflows and GitHub actions for my projects.
 
 * [Usage](#usage)
+  * [`enforce-commit-style`](#enforce-commit-style)
   * [`node-package-single`](#node-package-single)
 * [Contributing](#contributing)
 * [License](#license)
@@ -12,6 +13,24 @@ Reusable workflows and GitHub actions for my projects.
 ## Usage
 
 This repo holds the following shared workflows:
+
+### `enforce-commit-style`
+
+Used to run [commitlint](https://commitlint.js.org/) against all commits in a pull request, unless the pull request was opened by Dependabot.
+
+To use this workflow, add the following to `.github/workflows/commit-style.yml` in your repo:
+
+```yml
+name: Enforce commit style
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  enforce:
+    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v1
+```
 
 ### `node-package-single`
 
