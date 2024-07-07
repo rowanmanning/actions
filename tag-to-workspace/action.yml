@@ -1,0 +1,19 @@
+name: Tag to Workspace
+description: Converts a Release Please git tag name to an npm workspace path. Assumes that the root package is not published
+
+inputs:
+  tagName:
+    description: The tag name to convert
+    required: true
+
+outputs:
+  isValid:
+    description: Whether the tag name is a valid workspace
+  version:
+    description: The semantic version that the tag contains
+  workspace:
+    description: The workspace the tag is for. Set to an empty string for the root package
+
+runs:
+  using: node20
+  main: index.js
