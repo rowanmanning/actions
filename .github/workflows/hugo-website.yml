@@ -100,6 +100,7 @@ jobs:
       - run: npm ci
       - run: npm run --if-present build
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref_name == github.event.repository.default_branch
         with:
           path: ${{ inputs.build-path }}
 
@@ -107,6 +108,7 @@ jobs:
     name: Deploy the website
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref_name == github.event.repository.default_branch
     permissions:
       pages: write
       id-token: write
