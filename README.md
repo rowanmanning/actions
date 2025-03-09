@@ -31,7 +31,7 @@ on:
 
 jobs:
   enforce:
-    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v1
+    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v2
 ```
 
 ### `hugo-website`
@@ -55,7 +55,7 @@ on:
 
 jobs:
   deploy:
-    uses: rowanmanning/actions/.github/workflows/hugo-website.yml@v1
+    uses: rowanmanning/actions/.github/workflows/hugo-website.yml@v2
     with:
       hugo-version: '0.101.0' # required
       cache-version: v1       # optional - change if you need to clear the cache
@@ -89,7 +89,7 @@ on:
 
 jobs:
   ci:
-    uses: rowanmanning/actions/.github/workflows/node-package-monorepo.yml@v1
+    uses: rowanmanning/actions/.github/workflows/node-package-monorepo.yml@v2
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
       npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
@@ -122,7 +122,7 @@ on:
 
 jobs:
   ci:
-    uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v1
+    uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v2
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
       npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
