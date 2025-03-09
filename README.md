@@ -90,6 +90,8 @@ on:
 jobs:
   ci:
     uses: rowanmanning/actions/.github/workflows/node-package-monorepo.yml@v2
+    with:
+      nodeVersions: '[22, 20]'
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
       npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
@@ -123,6 +125,8 @@ on:
 jobs:
   ci:
     uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v2
+    with:
+      nodeVersions: '[22, 20]'
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
       npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
