@@ -17,7 +17,7 @@
   "bugs": "https://github.com/rowanmanning/actions/issues",
   "license": "MIT",
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "scripts": {
     "verify": "npm run verify:biome",
