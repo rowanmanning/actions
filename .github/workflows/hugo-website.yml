@@ -31,13 +31,12 @@ env:
   NODE_ENV: test
 
 jobs:
-
   verify:
     name: Verify code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -49,11 +48,11 @@ jobs:
     needs: verify
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: zcong1993/setup-timezone@master
         with:
           timezone: ${{ inputs.timezone }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -71,14 +70,14 @@ jobs:
     env:
       HUGO_CACHEDIR: /tmp/hugo-cache
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # We need all history for .GitInfo and .Lastmod
           fetch-depth: 0
       - uses: zcong1993/setup-timezone@master
         with:
           timezone: ${{ inputs.timezone }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -99,7 +98,7 @@ jobs:
             ${{ runner.os }}-
       - run: npm ci
       - run: npm run --if-present build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         if: github.ref_name == github.event.repository.default_branch
         with:
           path: ${{ inputs.build-path }}

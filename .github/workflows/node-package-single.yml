@@ -17,13 +17,12 @@ env:
   NODE_ENV: test
 
 jobs:
-
   verify:
     name: Verify code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ fromJSON(inputs.nodeVersions)[0] }}
           cache: npm
@@ -38,8 +37,8 @@ jobs:
       matrix:
         node: ${{ fromJSON(inputs.nodeVersions) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node }}
           cache: npm
@@ -52,8 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_name == github.event.repository.default_branch
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
           cache: npm
           node-version: ${{ fromJSON(inputs.nodeVersions)[0] }}
@@ -78,8 +77,8 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
           cache: npm
           node-version: ${{ fromJSON(inputs.nodeVersions)[0] }}
