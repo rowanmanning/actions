@@ -80,6 +80,10 @@ To use this workflow, add the following to `.github/workflows/ci.yml` in your re
 ```yml
 name: CI
 
+permissions:
+  id-token: write
+  contents: read
+
 on:
   push:
     branches: [ main ]
@@ -114,6 +118,10 @@ To use this workflow, add the following to `.github/workflows/ci.yml` in your re
 
 ```yml
 name: CI
+
+permissions:
+  id-token: write
+  contents: read
 
 on:
   push:
