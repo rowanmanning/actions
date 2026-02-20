@@ -84,7 +84,7 @@ jobs:
       - run: npm ci
       - run: npm run --if-present build
       - id: tagInfo
-        uses: rowanmanning/actions/tag-to-workspace@v3
+        uses: rowanmanning/actions/tag-to-workspace@v4
         with:
           tagName: ${{ github.ref_name }}
       - name: Publish to npm
