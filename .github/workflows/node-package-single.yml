@@ -6,7 +6,7 @@ on:
       nodeVersions:
         description: A JSON array of major version numbers to build with
         type: string
-        default: '[24, 22, 20]'
+        default: '[24, 22]'
     secrets:
       githubToken:
         required: true
