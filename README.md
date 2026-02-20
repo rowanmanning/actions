@@ -75,6 +75,9 @@ Used to test, build, and release a monorepo of Node.js packages. It does the fol
 > [!NOTE]
 > This workflow will never publish the root package.
 
+> [!NOTE]
+> This workflow requires that you have GitHub Actions set up as a [trusted publisher](https://docs.npmjs.com/trusted-publishers) for all packages in the monorepo.
+
 To use this workflow, add the following to `.github/workflows/ci.yml` in your repo:
 
 ```yml
@@ -98,12 +101,9 @@ jobs:
       nodeVersions: '[24, 22]'
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
-      npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
 ```
 
 The `githubToken` secret must reference a GitHub token that can read the repo as well as push, create tags, and open pull requests. This will not work if you use the default `secrets.GITHUB_TOKEN` because the workflow relies on certain actions successfully triggering further workflows.
-
-The `npmToken` secret must be an npm auth token with write access to the relevant packages.
 
 ### `node-package-single`
 
@@ -113,6 +113,9 @@ Used to test, build, and release a repo that contains a single Node.js package. 
   * Run `npm run test` for each of the LTS versions of Node.js I support
   * Manage release pull requests and tagging via [Release Please](https://github.com/googleapis/release-please#readme) (if required)
   * Run `npm run build` and publish the package to the public npm registry (if required)
+
+> [!NOTE]
+> This workflow requires that you have GitHub Actions set up as a [trusted publisher](https://docs.npmjs.com/trusted-publishers) for the package.
 
 To use this workflow, add the following to `.github/workflows/ci.yml` in your repo:
 
@@ -137,12 +140,9 @@ jobs:
       nodeVersions: '[24, 22]'
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}
-      npmToken: ${{ secrets.NPM_AUTH_TOKEN }}
 ```
 
 The `githubToken` secret must reference a GitHub token that can read the repo as well as push, create tags, and open pull requests. This will not work if you use the default `secrets.GITHUB_TOKEN` because the workflow relies on certain actions successfully triggering further workflows.
-
-The `npmToken` secret must be an npm auth token with write access to the relevant package.
 
 
 ## Contributing

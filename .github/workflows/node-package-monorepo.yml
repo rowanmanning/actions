@@ -10,8 +10,6 @@ on:
     secrets:
       githubToken:
         required: true
-      npmToken:
-        required: true
 
 env:
   NODE_ENV: test
@@ -92,5 +90,3 @@ jobs:
       - name: Publish to npm
         run: npm publish --access public --workspace "${{ steps.tagInfo.outputs.workspace }}"
         if: steps.tagInfo.outputs.isValid
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npmToken }}
