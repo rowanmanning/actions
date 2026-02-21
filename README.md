@@ -25,6 +25,9 @@ To use this workflow, add the following to `.github/workflows/commit-style.yml` 
 ```yml
 name: Enforce commit style
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [ main ]
@@ -48,6 +51,11 @@ To use this workflow, add the following to `.github/workflows/deploy.yml` in you
 
 ```yml
 name: Deploy
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
 
 on:
   push:
@@ -83,6 +91,10 @@ To use this workflow, add the following to `.github/workflows/ci.yml` in your re
 ```yml
 name: CI
 
+permissions:
+  id-token: write
+  contents: read
+
 on:
   push:
     branches: [ main ]
@@ -117,6 +129,10 @@ To use this workflow, add the following to `.github/workflows/ci.yml` in your re
 
 ```yml
 name: CI
+
+permissions:
+  id-token: write
+  contents: read
 
 on:
   push:
