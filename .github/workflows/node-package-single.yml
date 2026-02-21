@@ -14,8 +14,6 @@ on:
     secrets:
       githubToken:
         required: true
-      npmToken:
-        required: true
 
 env:
   NODE_ENV: test
