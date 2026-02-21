@@ -31,7 +31,7 @@ on:
 
 jobs:
   enforce:
-    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v3
+    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v4
 ```
 
 ### `hugo-website`
@@ -55,7 +55,7 @@ on:
 
 jobs:
   deploy:
-    uses: rowanmanning/actions/.github/workflows/hugo-website.yml@v3
+    uses: rowanmanning/actions/.github/workflows/hugo-website.yml@v4
     with:
       hugo-version: '0.101.0' # required
       cache-version: v1       # optional - change if you need to clear the cache
@@ -92,7 +92,7 @@ on:
 
 jobs:
   ci:
-    uses: rowanmanning/actions/.github/workflows/node-package-monorepo.yml@v3
+    uses: rowanmanning/actions/.github/workflows/node-package-monorepo.yml@v4
     with:
       nodeVersions: '[24, 22]'
     secrets:
@@ -127,7 +127,7 @@ on:
 
 jobs:
   ci:
-    uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v3
+    uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v4
     with:
       nodeVersions: '[24, 22]'
     secrets:
