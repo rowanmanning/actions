@@ -1,5 +1,8 @@
 name: Verify commits in a PR via Commitlint
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
 

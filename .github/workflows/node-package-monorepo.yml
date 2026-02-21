@@ -1,5 +1,9 @@
 name: Node.js package (monorepo)
 
+permissions:
+  id-token: write
+  contents: read
+
 on:
   workflow_call:
     inputs:
