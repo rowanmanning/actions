@@ -29,6 +29,7 @@ jobs:
           node-version: ${{ fromJSON(inputs.nodeVersions)[0] }}
           cache: npm
       - run: npm ci
+      - run: npm run --if-present build
       - run: npm run --if-present verify
 
   test:
@@ -45,6 +46,7 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci
+      - run: npm run --if-present build
       - run: npm run --if-present test
 
   manage-releases:
